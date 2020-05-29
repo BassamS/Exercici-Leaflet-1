@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+
+  <!-- CSS Styling -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Map div -->
+  <div id="map"></div>
+
+  <script>
+
+    // Phase 1
+    // View map
+    let map = L.map('map').setView([41.387177027722736, 2.1697139739990234], 15);
+
+    // Map Source
+    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=XHErOx6WV1ZEsbkUkptx', {
+      attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+    }).addTo(map);
+
+    // Phase 2
+    // Marker
+    let marker = L.marker([41.3869491285047, 2.1660292893648148]).addTo(map);
+
+    // Phase 3
+    // Marker - Text
+    marker.bindPopup("<b>Restaurant Centfocs</b><br><br> Restaurante mediterraneo <br> Carrer de Balmes, 16, 08007 Barcelona");
+
+  </script>
+</body>
+
+</html>
